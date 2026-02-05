@@ -1,0 +1,25 @@
+#phone #pay {
+    width: 1100px; margin: 50px auto 0;
+    background-color: #f9f9f9;
+}
+#phone #pay th {padding: 15px 0;}
+#phone #pay td {padding: 20px 0;}
+#phone #pay thead {
+    border: 2px solid #000;
+    border-left:0; border-right:0;
+}
+#phone #pay thead tr {}
+#phone #pay thead tr:nth-child(1) {border-bottom: 2px dotted #bbb;}
+#phone #pay thead tr th {
+    padding: 20px 0;
+}
+#phone #pay thead tr th img {width: 60px;}
+#phone #pay thead tr th em {
+    font-size: 0.75rem; color: #bbb; display:block;
+}
+#phone #pay tbody {background-color: #fff;}
+#phone #pay tbody tr {
+    border-bottom: 1px solid #ccc;
+}
+#phone #pay tbody tr th {}
+#phone #pay tbody tr td {width: 200px; text-align: center;}

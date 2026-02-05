@@ -1,0 +1,116 @@
+table {margin-bottom:50px}
+#t1 {
+    /* 테두리:선두께 선모양 선색상; */
+    border:1px solid black;
+    background-color: aliceblue;
+}
+#t1 tr {}
+#t1 tr:nth-child(2) {background-color: #ff0;}
+#t1 tr td {
+    border:1px dotted red;
+    padding:10px;
+    /* 표의 여백은 열(td, th) 적용 */
+}
+#t1 tr th {
+    border-bottom: 1px solid blue;
+    padding:10px 0 2px; /* 상(10) 좌우(10) 하(5) */
+}
+#t1 tr th:nth-child(1) {
+    border-right:2px solid green;
+}
+/* 연습 */
+#t2 {
+    width: 500px;
+    border:2px solid black
+}
+#t2 tr {}
+#t2 tr th {
+    background-color: aquamarine;
+    border-right: 1px solid black;
+}
+#t2 tr th:nth-child(1)
+#t2 tr th:nth-child(2) {width: 50px;}
+#t2 tbody {background-color:#eee;}
+#t2 tr td {
+    padding:20px;
+    border:2px solid black
+}
+/* 교보문고 도서재고 */
+#kyobo {}
+#kyobo h1 {}
+#kyobo #book {
+    background-color:#eee;
+    width:700px;
+    border-radius: 20px;
+}
+/* 공통열 선택자 */
+#kyobo #book th,
+#kyobo #book td {padding:15px 0;}
+#kyobo #book thead {}
+#kyobo #book thead tr {}
+#kyobo #book thead tr {}
+/* 그룹선택자 적용법 */
+/* #kyobo #book thead tr th:nth-child(2),
+#kyobo #book thead tr th:nth-child(3),
+#kyobo #book thead tr th:nth-child(4),
+#kyobo #book thead tr th:nth-child(5) {width:80px;} */
+/* 형제선택자 적용법 */
+#kyobo #book thead tr th:nth-child(1) ~ th {width:80px;}
+#kyobo #book tbody {}
+#kyobo #book tbody tr {}
+#kyobo #book tbody tr:nth-child(2) {border:2px solid black}
+#kyobo #book tbody tr th {
+    text-align:left;
+    padding-left:15px;
+}
+#kyobo #book tbody tr td {text-align: center;}
+/* 행정안전부 표 */
+#wrap {
+    width:1620px;
+    margin:0 auto; padding:50px 0;
+    background-color: #f5f5f5;
+}
+#wrap .top {
+    background-color: #fff;
+    width:750px; margin:0 auto;
+}
+#wrap .top h1 {}
+#wrap .top p {}
+#wrap #sales{
+    background-color: #ddd;
+    width:750px; margin:20px auto 0;
+}
+#wrap #sales th,
+#wrap #sales td {padding:10px 0;}
+#wrap #sales thead {
+    border:1px solid black;
+    border-left:0;
+    border-right:0;
+}
+#wrap #sales thead tr {}
+#wrap #sales thead tr th {}
+#wrap #sales thead tr th:nth-child(1) ~ th {width:130px;}
+#wrap #sales tbody {}
+#wrap #sales tbody tr {}
+#wrap #sales tbody tr:nth-child(4) {background-color: #bbb;}
+#wrap #sales tbody tr th {}
+#wrap #sales tbody tr td {text-align:center;}
+/* t선불요금제 */
+#phone {}
+#phone #pay {
+    width: 1100px;
+}
+#phone #pay thead {
+    border: 2px solid #000;
+    border-left:0; border-right:0;
+}
+#phone #pay thead tr {}
+#phone #pay thead tr:nth-child(1) {border-bottom: 1px dashed #bbb;}
+#phone #pay thead tr th {
+    padding:20px 0;
+}
+#phone #pay thead tr th img {width: 60px;}
+#phone #pay thead tr th em {
+    font-size:0.75rem; color:#888;
+    display:block;
+}

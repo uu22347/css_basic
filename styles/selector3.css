@@ -1,0 +1,27 @@
+/* 디자인 css */
+body {}
+#news {
+    background-color: #A7F1EE;
+    width: 430px; height: 932px;
+    padding: 15px 30px;
+}
+/* >a, .box, >p */
+#news > * {padding-bottom: 25px;}
+#news > a {
+    display:block;
+    font-size:1.25rem;
+    font-weight:600;
+}
+#news .box {}
+#news .box a {}
+#news .box a * {display:inline;}
+#news .box a h2 {
+    padding-bottom: 25px;
+    font-size: 1.88rem;
+    font-weight: 300;
+}
+#news .box a p {
+    font-size: 0.88rem;
+}
+#news > p {}
+#news > p span {}
