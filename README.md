@@ -155,3 +155,34 @@
     `li {width:calc((100% - (10px * 30)) / 4);}`
 * `a {display:block; height:calc(100% - 50px);}`
     * a의 크기를 인식하게 만들고 50px을 뺀 나머지 부모크기 주기
+## 수평/수직 정렬 레이아웃 속성 Flex
+### 정렬 순서
+1. 정렬하고자 하는 **2개 이상 형제관계**의 형제 대상 체크
+    * `ul > li*5 > a`-> 형제 `li`
+    * `dl > dt + dd*4 + dt + dd*2`-> 형제 `dt, dd`
+    * `div > a*3 > span` -> 형제 `a`
+2. 체크한 1번의 부모 체크
+    * `ul > li*5 > a`-> 부모 `ul`
+    * `dl > dt + dd*4 + dt + dd*2`-> 부모 `dl`
+    * `div > a*3 > span` -> 부모 `div`
+3. 부모에 메인축/교차축 확인하며 `display:flex` 부터 명령시작하기
+### 정렬 방향과 줄바꿈 속성
+* 주의사항 : `display:flex`먼저 작성해야함. 
+* `flex-flow:row nowrap` : 기본값(메인축 수평, 줄바꿈안함)
+* `flex-flow:row wrap` : 메인축 수평, 가로 크기에 따라 줄바꿈함
+* `flex-flow:columm nowrap` : 메인축 수직, 줄바꿈안함
+* `flex-flow:columm wrap` : 메인축 수직, 세로 크기에 따라 줄바꿈함
+* **메인축이란?** 부모 안 2개 이상의 형제 정렬 방향
+* **교차축이란?** 부모 안 2개 이상의 형제 교차 방향(메인 반대축)
+### 메인축 정렬 속성
+* `justify-content:`
+    * `flex-start` : 메인축이 수직이면 위쪽, 수평이면 왼쪽
+    * `flex-end` : 메인축이 수직이면 아래, 수평이면 오른쪽
+    * `space-between` : 메인축이 수직이면 위-아래 양쪽 끝, 수평이면 왼쪽-오른쪽 양쪽 끝
+    * `space-around` : 메인축이 수직이면 위-아래 양쪽 여백 주고 균등배치, 수평이면 왼쪽-오른쪽 양쪽 여백 주고 균등 배치
+    * `center` : 메인축이 수직이면 수직중앙, 수평이면 수평중앙
+### 교차축 정렬 속성
+* `align-items:` 교차축이 1줄일때
+    * `flex-start, flex-end, center` 위 메인축과 뜻 동일
+* `align-content:` 교차축이 2줄 이상일때
+    * `flex-start, flex-end, center, space-between, space-around` 위 메인축과 뜻 동일, 값 동일 
