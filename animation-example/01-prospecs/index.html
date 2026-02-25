@@ -48,8 +48,13 @@
         }
         header img {width:80px;}
         nav {
-            width:100%; margin:70px auto 0; background:#222;
+            width:100%; margin:70px auto; background:#222;
             display:flex; justify-content:space-around; 
+            /* 처음부터 화면 고정 */
+            /* position:fixed; left:0; top:70px; width:100%; z-index:100; */
+            /* 스크롤이동과 함께 특정 위치에 닿으면 고정 */
+            position:sticky; left:0; top:0; width:100%; z-index:100;
+            /* sticky 주의점 : sticky 적용대상의 부모가 전체 웹사이트 높이와 같아야함 (body 또는 #wrap등) */
         }
         nav a {position:relative; display:inline-block; line-height:60px; padding:0 20px; color:#fff; font-size:0.875rem;}
         nav a::after {/* 가상 마지막 자식 요소 */
