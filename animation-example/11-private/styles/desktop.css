@@ -6,8 +6,9 @@ header {
     align-items:center; z-index:999;
     position:fixed; left:50%; top:0; margin-left:-700px;
 }
-header nav a {margin:0 7px;}
+header nav a {margin:0 7px; color:#fff;}
 header .right a {
+    color:#fff;
     position:relative; padding:5px 5px 5px 27px;
     border:1px dashed rgba(255,255,255,0.6); 
     font-size:0.875rem; border-radius:3px;
@@ -29,6 +30,22 @@ main {
     top: 80px;
     text-align: center;
 }
+main::before, main::after {
+    content:''; display:block; /* before,after 가상요소 필수속성 */
+    position:absolute;/* 형제랑 겹치는 위치 속성 */
+    width:700px; height:100%; /* 부모에 상대적인 크기 */
+    z-index: 900;/* 형제와 겹치는 중첩 순서 */
+    top:0;/* 좌표 설정 */
+}
+main::before {
+    left:0; 
+    background:linear-gradient(90deg, rgb(9, 13, 43), transparent);
+}
+main::after {
+    right:0; 
+    transform: rotateY(180deg);
+    background:linear-gradient(90deg, rgb(9, 13, 43), transparent);
+}
 main > * {max-width:1400px; margin:0 auto;}
 /* 중첩순서 처리 배경(10) 그라디언트(20) 나머지(30) */
 main .bg_wrap {position:absolute; z-index:10;}
@@ -40,24 +57,34 @@ main .bg_wrap .bg {width:1400px; margin:0 auto;}
 main .bg_wrap .bg1 {
     height:100px; 
     background:url(../images/bg_cloud.png) repeat-x;
+    animation:bg_pst 100s linear infinite;
 }
 main .bg_wrap .bg2 {
     height:200px; 
     background:url(../images/bg_city1.png) repeat-x;
+    animation:bg_pst 30s linear infinite;
 }
 main .bg_wrap .bg3 {
     height:100px; position:relative; top:-96px;
     background:url(../images/bg_city2.png) repeat-x;
+    animation:bg_pst 10s linear infinite;
 }
 /* 메인제목 */
 main .txt {}
 /* 메인 자동차 위 리스트3 */
 /* 메인 자동차 */
-main .car {margin-top:150px; text-align:center; width:600px;}
+main .car {animation:x500 2s ease both; margin-top:150px; text-align:center; width:600px;}
 main .car #car {width:100%;}
 main .car #left_tire, main .car #right_tire {
     position:absolute; bottom:25px; width:67px;
 }
 main .car #left_tire {left:102px;}
 main .car #right_tire {right:91px;}
+main .car #left_tire,
+main .car #right_tire {animation:rotate360 2s linear infinite;}
+main .scroll {animation:mouse_hint 1.5s linear alternate infinite;}
+footer {
+    height: 200px; color:#fff;
+    background:linear-gradient(40deg, purple, transparent, brown,black, rgba(255,255,255,0.5));
+}
 

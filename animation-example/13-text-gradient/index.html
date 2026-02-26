@@ -13,10 +13,12 @@
             margin:0 auto; font-weight:700; 
             font-size:5rem; text-align: center;
             background: linear-gradient(to right, #ff00ff, #00ffff, #ff00ff);
+            /* -webkit- 파이어폭스, 크롬 등 브라우저에서 안전하게 속성 적용하는 웹브라우저 엔진 명령어 */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             color: transparent;
+            /* animation:bg-gradient 5s linear infinite; */
         }
         main h2 {
             font-family: 'Black Ops One';
@@ -27,16 +29,33 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             color: transparent;
+            animation:scale 5s linear alternate infinite;
+        }
+        main h3 {
+            font-size:5rem; text-align:center; font-weight:800;
+            background:url(./images/bg.jpg)center;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
         }
         p {width:30px;}
-        p img {width:100%;}
+        p img {width:100%; animation:arrow 3s linear alternate infinite;}
         p:nth-child(1) img {}
         footer {position:fixed; bottom:50px; right:50px;}
         footer img {width:24px;}
         footer img:nth-child(1) {margin-right:10px;}
         @keyframes bg-gradient {
-            0% {}
-            100% {}
+            0% {background-position-x:0;}
+            100% {background-position-x:2000;}
+        }
+        @keyframes arrow {
+            0% {transform:translateY(0);}
+            100% {transform:translateY(20px);}
+        }
+        @keyframes scale {
+            0% {transform:scale(1);}
+            100% {transform:scale(1.1);}
         }
     </style>
 </head>
@@ -45,6 +64,7 @@
         <p><img src="./images/arrow.png" alt=""></p>
         <h1>PORTFOLIO</h1>
         <h2>PROJECT</h2>
+        <h3>웹접근성 & 웹표준</h3>
         <p><img src="./images/arrow.png" alt=""></p>
     </main>
     <footer>

@@ -226,3 +226,9 @@
 * `transform:translate(10px, 20px);` x, y 이동 순서로 작성
 * 다른 모든 속성은 중심이 왼쪽 상단, **transform만 유일하게 가운데가 기준점**
 * 기준점 변경방법 : `transform-origin:x,y`
+## 글자 안에서 그라데이션 효과 및 배경이미지를 마스크 씌워서 보여주고 싶을때 사용하는 속성값 모음
+* `webkit-` 파이어폭스, 크롬 등 브라우저에서 안전하게 속성 적용하는 웹브라우저 엔진 명령어
+    * -webkit-background-clip: text;
+    * -webkit-text-fill-color: transparent;
+    * background-clip: text;
+    * color: transparent;

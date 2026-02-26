@@ -42,6 +42,11 @@
             background:url(images/bg_flow.png) repeat-x left top;
             height:150px; width:100%;
             position:absolute; z-index:30;
+            animation: bg_txt 30s linear infinite;
+        }
+        @keyframes bg_txt {
+            0% {background-position-x:0;}
+            100% {background-position-x:2000px;}
         }
     </style>
 </head>
